@@ -27,6 +27,11 @@ class App extends Component {
   };
 
   render() {
+    const style = {
+      backgroundColor:"pink",
+      border:"1px solid #eee",
+      padding:"16px"
+    }
     return (
       <div className="App">
         <h1>Without using Hooks</h1>
@@ -42,7 +47,7 @@ class App extends Component {
         >
           Hobbies:Reading
         </Person>
-        <button onClick={() => this.switchNameHandler("Akash Mane")}>Switch Name</button>
+        <button style={style} onClick={() => this.switchNameHandler("Akash Mane")}>Switch Name</button>
         {/* //Can cause performance issue in big apps */}
       </div>
     );

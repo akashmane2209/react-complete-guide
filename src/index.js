@@ -8,7 +8,7 @@ import registerServiceWorker from "./registerServiceWorker";
 ReactDOM.render(
   <div>
     <App />
-    <AppHooks />
+    {/* <AppHooks /> */}
   </div>,
   document.getElementById("root")
 );
