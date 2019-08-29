@@ -15,8 +15,7 @@ const AppHooks = props => {
 
   const switchNameHandler = () => {
     setPersonsState({
-      persons: [
-        { name: "Akash Mane", age: "21" },
+      persons: [ 
         { name: "Akshay Mane", age: "21" }
       ]
     });

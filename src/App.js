@@ -5,13 +5,13 @@ import Person from "./Person/Person";
 class App extends Component {
   state = {
     persons: [{ name: "Akash", age: "21" }, { name: "Akshay", age: "21" }],
-    otherState:"Other State"
+    otherState: "Other State"
   };
-  switchNameHandler = () => {
+  switchNameHandler = newName => {
     console.log("was clicked!");
     this.setState({
       persons: [
-        { name: "Akash Mane", age: "21" },
+        { name: newName, age: "21" },
         { name: "Akshay Mane", age: "21" }
       ]
     });
@@ -25,12 +25,14 @@ class App extends Component {
           age={this.state.persons[0].age}
         />
         <Person
+          click={this.switchNameHandler.bind(this, "Akash Mane")}
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
         >
           Hobbies:Reading
         </Person>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <button onClick={() => this.switchNameHandler("Akash Mane")}>Switch Name</button>   
+        {/* //Can cause performance issue in big apps */}
       </div>
     );
   }
